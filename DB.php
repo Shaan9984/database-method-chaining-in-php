@@ -58,18 +58,6 @@ class DB {
         return $this;
     }
 
-    public function insert($table, $array) {
-        // $str = 
-    }
-
-    public function update($keys, $where) {
-
-    }
-
-    public function destroy($where) {
-
-    }
-
     public function get() {
         $data = mysqli_query($this->conn,$this->query);
         if(!empty($data) && $data->num_rows > 0) {
@@ -100,9 +88,8 @@ $db = new DB();
 // die();
 $result = $db->select()
             ->from('students')
-            // ->where("mobile = 9984033701")
             // ->where("class","=","9th")
-            ->orderBy('roll_no','DESC')
+            ->orderBy('id','DESC')
             // ->limit(3,2)
             // ->toSql()
             // ->get()
